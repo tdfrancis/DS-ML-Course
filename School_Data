@@ -1,0 +1,68 @@
+import pandas as pd
+import numpy as np
+import random
+from faker import Faker
+
+fake = Faker()
+
+# Create Students Table
+def generate_students(n=100):
+    students = []
+    for i in range(n):
+        student_id = i + 1
+        name = fake.name().lower() if random.random() < 0.2 else fake.name()  # Inconsistent capitalization
+        email = fake.email() if random.random() > 0.1 else ''  # Some missing emails
+        age = random.randint(10, 25)  # Some unrealistic ages
+        students.append([student_id, name, email, age])
+    return pd.DataFrame(students, columns=['StudentID', 'Name', 'Email', 'Age'])
+
+# Create Courses Table
+def generate_courses():
+    courses = [
+        (1, "Math 101"),
+        (2, "History 201"),
+        (3, "Science 102"),
+        (4, "English 150"),
+        (5, "Physics 220"),
+    ]
+    return pd.DataFrame(courses, columns=['CourseID', 'CourseName'])
+
+# Create Teachers Table
+def generate_teachers(n=10):
+    teachers = []
+    for i in range(n):
+        teacher_id = i + 1
+        name = fake.name()
+        email = fake.email()
+        subject = random.choice(["Math", "History", "Science", "English", "Physics"])
+        teachers.append([teacher_id, name, email, subject])
+    return pd.DataFrame(teachers, columns=['TeacherID', 'Name', 'Email', 'Subject'])
+
+# Create Enrollments Table
+def generate_enrollments(students, courses, n=150):
+    enrollments = []
+    for _ in range(n):
+        student_id = random.choice(students['StudentID'].tolist())
+        course_id = random.choice(courses['CourseID'].tolist())
+        grade = random.choice([random.randint(50, 100), '', 105, -5])  # Invalid and missing grades
+        enrollments.append([student_id, course_id, grade])
+    
+    # Introduce duplicate records
+    enrollments.append(enrollments[random.randint(0, len(enrollments) - 1)])
+    enrollments.append(enrollments[random.randint(0, len(enrollments) - 1)])
+    
+    return pd.DataFrame(enrollments, columns=['StudentID', 'CourseID', 'Grade'])
+
+# Generate Data
+students_df = generate_students(100)
+courses_df = generate_courses()
+teachers_df = generate_teachers(10)
+enrollments_df = generate_enrollments(students_df, courses_df, 150)
+
+# Save to CSV
+students_df.to_csv("students.csv", index=False)
+courses_df.to_csv("courses.csv", index=False)
+teachers_df.to_csv("teachers.csv", index=False)
+enrollments_df.to_csv("enrollments.csv", index=False)
+
+print("Synthetic school operations data created with errors!")
