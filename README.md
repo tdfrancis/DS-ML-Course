@@ -1,16 +1,10 @@
 # Introduction to Data Science & Machine Learning
 
-Instructor: Tempest Francis
-Duration: 10 Days
-Level: Pre-College, Beginner-Friendly
-Class Length: 3 hours/day (includes lecture, pair programming, mini-challenges, and labs)
-Primary Tools: Google CoLab & GitHub
-Course Goals
-Develop foundational skills in Python programming and data analytics
-Understand and apply core data science workflows and machine learning techniques
-Practice communication, presentation, and collaboration skills
-Build a personal GitHub portfolio with notebooks, labs, and a final project
-Explore ethical considerations and career paths in data
+Instructor: Tempest Francis  
+Duration: 10 Days  
+Level: Pre-College, Beginner-Friendly  
+Class Length: 3 hours/day (includes lecture, pair programming, mini-challenges, and labs)  
+Primary Tools: Google CoLab & GitHub  
 
 ## 🧠 Learning Objectives
 L1: Develop foundational knowledge of data science & machine learning
