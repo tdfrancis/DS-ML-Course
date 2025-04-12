@@ -7,11 +7,11 @@ Class Length: 3 hours/day (includes lecture, pair programming, mini-challenges, 
 Primary Tools: Google CoLab & GitHub  
 
 ## 🧠 Learning Objectives
-L1: Develop foundational knowledge of data science & machine learning
-L2: Apply Python programming skills for data manipulation & visualization
-L3: Analyze real-world datasets using data wrangling & EDA techniques
-L4: Implement & evaluate machine learning models using Scikit-Learn
-L5: Ethically present, interpret, and communicate data analysis & modeling
+L1: Develop foundational knowledge of data science & machine learning  
+L2: Apply Python programming skills for data manipulation & visualization  
+L3: Analyze real-world datasets using data wrangling & EDA techniques  
+L4: Implement & evaluate machine learning models using Scikit-Learn  
+L5: Ethically present, interpret, and communicate data analysis & modeling  
 
 ## 📚 Course References
 Jean, Hadrien. Essential Math for Data Science. O’Reilly Media, 2022.
